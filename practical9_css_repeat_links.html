@@ -1,0 +1,135 @@
+<html>
+<head>
+<title>CSS - background-repeat and Link Styles</title>
+<style type="text/css">
+/* ---------- 1) Control repetition of image: background-repeat ---------- */
+body
+{
+    background-color: #F5F5F0;
+    font-family: Calibri, sans-serif;
+    font-size: 16px;
+}
+
+h1
+{
+      font-family: "Monotype Corsiva", cursive;
+      font-size: 48px;
+      color: steelblue;
+      text-align: center;
+}
+
+h2
+{
+      font-family: Verdana, sans-serif;
+      color: darkred;
+}
+
+.box
+{
+    width: 450px;
+    height: 150px;
+    border: 2px solid steelblue;
+    padding: 10px;
+    margin-bottom: 15px;
+    background-image: url("images/logo.jpg");
+    background-color: white;
+    font-weight: bold;
+}
+
+/* default: image repeats both horizontally and vertically */
+#repeat      { background-repeat: repeat; }
+
+/* repeat only horizontally */
+#repeatx     { background-repeat: repeat-x; }
+
+/* repeat only vertically */
+#repeaty     { background-repeat: repeat-y; }
+
+/* image shown only once */
+#norepeat    { background-repeat: no-repeat; }
+
+/* ---------- 2) Styles for links ---------- */
+/* Order must be: link, visited, hover, active */
+
+a:link
+{
+     color: teal;
+     text-decoration: none;
+     font-size: 20px;
+}
+
+a:visited
+{
+    color: darkmagenta;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+a:hover
+{
+    color: white;
+    text-decoration: underline;
+    background-color: steelblue;
+    font-size: 24px;
+}
+
+a:active
+{
+    color: darkorange;
+    text-decoration: underline overline;
+    font-size: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>CSS - background-repeat &amp; Link Styles</h1>
+
+<h2>1) The background-repeat property</h2>
+
+<div class="box" id="repeat">background-repeat: repeat (both directions)</div>
+<div class="box" id="repeatx">background-repeat: repeat-x (horizontal only)</div>
+<div class="box" id="repeaty">background-repeat: repeat-y (vertical only)</div>
+<div class="box" id="norepeat">background-repeat: no-repeat (shown once)</div>
+
+<h2>2) Styles for links</h2>
+
+<table border="1" cellspacing="0" cellpadding="8">
+<tr>
+    <th>Pseudo-class</th>
+    <th>Meaning</th>
+    <th>Style Applied</th>
+</tr>
+<tr>
+    <td>A:link</td>
+    <td>Normal, unvisited link</td>
+    <td>Teal, no underline</td>
+</tr>
+<tr>
+    <td>A:visited</td>
+    <td>Link already visited by the user</td>
+    <td>Dark magenta, no underline</td>
+</tr>
+<tr>
+    <td>A:hover</td>
+    <td>Mouse pointer is over the link</td>
+    <td>White, underline, steel blue background</td>
+</tr>
+<tr>
+    <td>A:active</td>
+    <td>Link at the moment it is clicked</td>
+    <td>Dark orange, underline + overline</td>
+</tr>
+</table>
+
+<br>
+<p>Try the links below:</p>
+<a href="home.html">HOME</a> &nbsp;&nbsp;&nbsp;
+<a href="login.html">LOGIN</a> &nbsp;&nbsp;&nbsp;
+<a href="registration.html">REGISTRATION</a> &nbsp;&nbsp;&nbsp;
+<a href="catalogue.html">CATALOGUE</a> &nbsp;&nbsp;&nbsp;
+<a href="cart.html">CART</a>
+
+</body>
+</html>

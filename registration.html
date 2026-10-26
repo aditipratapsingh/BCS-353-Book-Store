@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>Registration Form</title>
+</head>
+<body bgcolor="#EEF7EE">
+<center><font color="Teal" size="6" face="Verdana">Registration Form</font></center><br />
+
+<form name="f1" method="post" action="right.html">
+<table align="center" cellspacing="10">
+<tr>
+    <td><b>Name</b></td>
+    <td><input type="text" name="name"></td>
+</tr>
+<tr>
+    <td><b>Password</b></td>
+    <td><input type="password" name="pass"></td>
+</tr>
+<tr>
+    <td><b>E-mail id</b></td>
+    <td><input type="text" name="email"></td>
+</tr>
+<tr>
+    <td><b>Phone Number</b></td>
+    <td><input type="text" name="phone"></td>
+</tr>
+<tr>
+    <td><b>Sex</b></td>
+    <td>
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female
+    </td>
+</tr>
+<tr>
+    <td><b>Date of Birth</b></td>
+    <td>
+        <select name="day">
+            <option value="">Day</option>
+            <script>
+                for (let i = 1; i <= 31; i++) {
+                    document.write('<option value="' + i + '">' + i + '</option>');
+                }
+            </script>
+        </select>
+        <select name="month">
+            <option value="">Month</option>
+            <option value="1">January</option>
+            <option value="2">February</option>
+            <option value="3">March</option>
+            <option value="4">April</option>
+            <option value="5">May</option>
+            <option value="6">June</option>
+            <option value="7">July</option>
+            <option value="8">August</option>
+            <option value="9">September</option>
+            <option value="10">October</option>
+            <option value="11">November</option>
+            <option value="12">December</option>
+        </select>
+        <select name="year">
+            <option value="">Year</option>
+            <script>
+                for (let i = 2026; i >= 1950; i--) {
+                    document.write('<option value="' + i + '">' + i + '</option>');
+                }
+            </script>
+        </select>
+    </td>
+</tr>
+<tr>
+    <td><b>Languages Known</b></td>
+    <td>
+        <input type="checkbox" name="lang" value="English">English
+        <input type="checkbox" name="lang" value="Telugu">Telugu
+        <input type="checkbox" name="lang" value="Hindi">Hindi
+        <input type="checkbox" name="lang" value="Tamil">Tamil
+    </td>
+</tr>
+<tr>
+    <td><b>Address</b></td>
+    <td><textarea rows="3" cols="25" name="addr"></textarea></td>
+</tr>
+<tr align="center">
+    <td><input type="submit" value="Submit"></td>
+    <td><input type="reset" value="Reset"></td>
+</tr>
+</table>
+</form>
+</body>
+</html>

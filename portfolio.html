@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>My Portfolio</title>
+<meta charset="UTF-8">
+
+<!-- ================= CSS ================= -->
+<style type="text/css">
+body
+{
+    margin: 0;
+    font-family: Tahoma, Verdana, sans-serif;
+    font-size: 14px;
+    background-color: #f5fffa;
+    color: #222;
+}
+
+/* ---------- Header ---------- */
+#header
+{
+    background-color: steelblue;
+    text-align: center;
+    padding: 15px;
+}
+
+#header h1
+{
+    font-family: "Monotype Corsiva", cursive;
+    font-size: 48px;
+    color: white;
+    margin: 5px;
+}
+
+#header marquee
+{
+    background-color: lightyellow;
+    color: darkred;
+    font-weight: bold;
+}
+
+/* ---------- Navigation ---------- */
+#nav
+{
+    background-color: darkslategray;
+    text-align: center;
+    padding: 10px;
+}
+
+#nav a:link, #nav a:visited
+{
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+}
+#nav a:hover
+{
+    color: lightyellow;
+    text-decoration: underline;
+}
+
+#nav a:active
+{
+    color: lightskyblue;
+}
+
+/* ---------- Sections ---------- */
+.section
+{
+    width: 80%;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: white;
+    border: 2px solid steelblue;
+}
+
+.section h2
+{
+    font-family: Georgia, serif;
+    color: teal;
+    border-bottom: 2px solid teal;
+}
+
+#about
+{
+    background-image: url("images/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-color: honeydew;
+}
+
+#about img
+{
+    float: left;
+    margin-right: 15px;
+    border: 3px solid steelblue;
+}
+
+table
+{
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td
+{
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+}
+
+th
+{
+     background-color: steelblue;
+     color: white;
+}
+
+/* progress bars for skills */
+.bar
+{
+    background-color: lightgray;
+    width: 300px;
+    height: 18px;
+    border: 1px solid black;
+}
+
+.fill
+{
+    background-color: teal;
+    height: 18px;
+}
+
+.err
+{
+    color: red;
+    font-size: 14px;
+}
+
+#footer
+{
+    background-color: darkslategray;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.dark
+{
+    background-color: #222 !important;
+    color: white !important;
+}
+</style>
+
+<!-- ================= JavaScript ================= -->
+<script language="javascript">
+// Greeting based on the time of the day
+function greet()
+{
+    var h = new Date().getHours();
+    var msg = "Good Evening";
+    if (h < 12) msg = "Good Morning";
+    else if (h < 17) msg = "Good Afternoon";
+    document.getElementById("greet").innerHTML = msg + ", welcome to my portfolio!";
+}
+
+// Live clock
+function clock()
+{
+    document.getElementById("time").innerHTML = new Date().toLocaleString();
+}
+setInterval(clock, 1000);
+
+// Toggle dark / light mode
+function toggleMode()
+{
+    document.body.classList.toggle("dark");
+}
+
+// Contact form validation
+function validateForm()
+{
+     var name = document.cf.cname.value;
+     var email = document.cf.cemail.value;
+     var phone = document.cf.cphone.value;
+     var msg   = document.cf.cmsg.value;
+
+     var alpha = /^[A-Za-z ]+$/;
+     var emailPattern = /^[A-Za-z0-9._-]+@[A-Za-z0-9-]+(\.[A-Za-z]{2,})+$/;
+     var phonePattern = /^[0-9]{10}$/;
+
+     if (name.length < 6 || !alpha.test(name))
+     {
+         alert("Name should contain alphabets only and at least 6 characters");
+         return false;
+     }
+     if (!emailPattern.test(email))
+     {
+         alert("Enter a valid e-mail id (name@domain.com)");
+         return false;
+     }
+     if (!phonePattern.test(phone))
+     {
+         alert("Phone number should contain 10 digits only");
+         return false;
+     }
+     if (msg == "")
+     {
+         alert("Message should not be empty");
+         return false;
+     }
+     alert("Thank you " + name + "! Your message has been sent.");
+     return true;
+}
+</script>
+</head>
+
+<body onload="greet(); clock();">
+
+<!-- ================= HEADER ================= -->
+<div id="header">
+    <h1>My Portfolio</h1>
+    <marquee behavior="alternate" width="600">Aditi Pratap Singh | B.Tech CSIT |
+         Web Developer in the making</marquee>
+    <p id="greet"></p>
+    <p id="time"></p>
+</div>
+
+<!-- ================= NAVIGATION ================= -->
+<div id="nav">
+    <a href="#about">ABOUT</a>
+    <a href="#education">EDUCATION</a>
+    <a href="#skills">SKILLS</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#contact">CONTACT</a>
+    <a href="#" onclick="toggleMode(); return false;">DARK / LIGHT</a>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<div class="section" id="about">
+    <h2>About Me</h2>
+    <img src="images/logo.jpg" width="120" height="120"
+        alt="My Photo">
+    <p>
+        Hello! I am <b>Aditi Pratap Singh</b>, a second-year <i>B.Tech (CSIT)</i>
+        student at
+        <u>G. L. Bajaj Institute of Technology and Management, Greater Noida</u>.
+        I enjoy dancing and reading books.
+    </p>
+    <div style="clear: both;">
+    </div>
+</div>
+
+<!-- ================= EDUCATION ================= -->
+<div class="section" id="education">
+    <h2>Education</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Institute</th>
+            <th>Year</th>
+            <th>Result</th>
+        </tr>
+        <tr>
+            <td>Aditi Pratap Singh</td>
+            <td>B.Tech (CSIT)</td>
+            <td>GL Bajaj Institute of Technology and Management</td>
+            <td>2025 - 2029</td>
+            <td>Pursuing</td>
+        </tr>
+        <tr>
+            <td>Aditi Pratap Singh</td>
+            <td>Intermediate (12th)</td>
+            <td>Greater Noida World School</td>
+            <td>2024</td>
+            <td>80 %</td>
+        </tr>
+        <tr>
+            <td>Aditi Pratap Singh</td>
+            <td>High School (10th)</td>
+            <td>Greater Noida World School</td>
+            <td>2022</td>
+            <td>94 %</td>
+        </tr>
+    </table>
+</div>
+
+<!-- ================= SKILLS ================= -->
+<div class="section" id="skills">
+    <h2>Skills</h2>
+    <p>HTML</p>
+    <div class="bar"><div class="fill" style="width:80%"></div></div>
+    <p>CSS</p>
+    <div class="bar"><div class="fill" style="width:65%"></div></div>
+    <p>JavaScript</p>
+    <div class="bar"><div class="fill" style="width:50%"></div></div>
+    <p>C / C++</p>
+    <div class="bar"><div class="fill" style="width:85%"></div></div>
+</div>
+
+<!-- ================= PROJECTS ================= -->
+<div class="section" id="projects">
+    <h2>Projects</h2>
+    <ol>
+        <li><a href="home.html">Online Book Store</a> - static website using frames,
+            tables and forms</li>
+        <li><a href="practical6_js_validation_name_password.html">Registration Form</a>
+            - form with JavaScript validation</li>
+        <li><a href="practical8_css_fonts_background.html">CSS Styling Page</a> - fonts,
+             colors and background images</li>
+    </ol>
+</div>
+
+<!-- ================= CONTACT ================= -->
+<div class="section" id="contact">
+    <h2>Contact Me</h2>
+    <form name="cf" method="post" action="#" onsubmit="return validateForm()">
+    <table style="width:60%; margin:auto;">
+        <tr>
+             <td align="left"><b>Name</b></td>
+            <td><input type="text" name="cname"></td>
+        </tr>
+        <tr>
+             <td align="left"><b>E-mail</b></td>
+            <td><input type="text" name="cemail"></td>
+        </tr>
+        <tr>
+             <td align="left"><b>Phone</b></td>
+            <td><input type="text" name="cphone" maxlength="10"></td>
+        </tr>
+        <tr>
+             <td align="left"><b>Gender</b></td>
+            <td>
+                  <input type="radio" name="g" value="male">Male
+                  <input type="radio" name="g" value="female">Female
+             </td>
+        </tr>
+        <tr>
+             <td align="left"><b>Interested In</b></td>
+            <td>
+                  <input type="checkbox" name="i1">Web
+                  <input type="checkbox" name="i2">App
+                  <input type="checkbox" name="i3">Other
+             </td>
+        </tr>
+        <tr>
+             <td align="left"><b>Message</b></td>
+            <td><textarea name="cmsg" rows="4" cols="25"></textarea></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Send"></td>
+            <td><input type="reset" value="Reset"></td>
+        </tr>
+    </table>
+    </form>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<div id="footer">
+    &copy; 2026 Aditi Pratap Singh | Created for Web Designing Workshop (BCS-353) |
+    <a href="#header" style="color:lightyellow;">Back to top</a>
+</div>
+
+</body>
+</html>
